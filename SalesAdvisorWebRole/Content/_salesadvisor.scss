@@ -1,0 +1,470 @@
+/* 
+ * This is intended to be deliverable styles to allow extension of these styles.
+ * They are not intended to be perfect, but a starting point for future applications
+ * to keep a consistennt theme
+ *  */
+
+@import "masterVars";
+@import "utilMixins";
+
+* {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+html {
+	font-size:20px; /* Set our base font.  Everything besides this should be responsive */
+	font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+	background-color: white;
+}
+
+// begin font combos
+
+@mixin largeTitleText {
+  font-size: $largeTitleText;
+  font-family: $lightFont;
+}
+
+.largeTitleText {
+  font-size: $largeTitleText;
+  font-family: $lightFont;
+} 
+
+.smallTitleText {
+  font-size: $smallTitleText;
+  font-family: $lightFont;
+}
+
+
+.xLargeText { 
+  font-size: $xLargeText;
+  font-family: $lightFont;
+}
+
+.xLargeTextGrey { 
+  font-size: $xLargeText;
+  font-family: $lightFont;
+  color: $mediumLightGrey;
+}
+
+@mixin largeText {
+  font-size: $largeText;
+  font-family: $lightFont;
+}
+
+.largeText {
+  font-size: $largeText;
+  font-family: $lightFont;
+}
+
+.largeTextGrey {
+  font-size: $largeText;
+  font-family: $lightFont;
+  color: $mediumLightGrey;
+}
+
+@mixin smallText {
+  font-size: $smallText;
+  font-family: $lightFont;
+}
+
+.smallText {
+  font-size: $smallText;
+  font-family: $lightFont;
+}
+
+.miniText {
+  font-size: $miniText;
+  font-family: $regularFont;
+}
+
+@mixin footnoteText {
+  font-size: $footnoteText;
+  font-family: $regularFont;
+}
+
+.footnoteText {
+  font-size: $footnoteText;
+  font-family: $regularFont;
+}
+
+@mixin bubbleText {
+  font-size: $bubbleText;
+  font-family: $semiboldFont;
+}
+
+@mixin blockButton{
+    display: block;
+    text-align:center;
+    padding: 1rem 2rem;
+    margin: 1rem;
+}
+.bubbleText {
+  font-size: $bubbleText;
+  font-family: $semiboldFont;
+}
+
+
+
+// end font combos
+
+
+@include allA {
+    text-decoration:none;
+    color:#595959;
+}
+
+li {
+	list-style:none;
+}
+
+input[type=text], textarea {
+	@include vendorPrefix("appearance", none);
+	border: 1px solid $lightGrey;
+	padding: 0.7rem;
+	&:focus {
+		border: 1px solid $green;
+		outline: none;
+	}
+}
+
+.hidden {
+    display: none !important;
+}
+
+@mixin squareButton($background) {
+	@include vendorPrefix("appearance", none);
+	@include vendorPrefix("border-radius", 2px);
+	padding: 1.2em 2rem;
+	background-color: $background;
+	color: $white;
+    font-size: $largeText;
+    font-weight: bold;
+	border: 0px;
+}
+
+div.loading_word {
+    text-align:center;
+    vertical-align:center;
+    height:4rem;
+	div {
+		margin-top:1rem;
+		span {
+			font-size:2rem;
+			color: $green;
+			@include vendorPrefix("animation-name", loading);
+			@include vendorPrefix("animation-duration", 3.3333s);
+			@include vendorPrefix("animation-iteration-count", infinite);
+			
+
+			@for $i from 1 through 10 {
+				$var: $i/3+s;
+				&:nth-child(#{$i}){
+					@include vendorPrefix("animation-delay", $var);
+				}
+			}
+		
+		}	
+	}
+}
+
+@include keyframes(loading) {
+    from {color: $green;}
+	1%{color: $black;}
+	10%{color: $black;}
+    10.001%{color: $green;}
+    to {color: $green;}
+}
+
+
+.circle {
+    @include circle;
+}
+
+.cancelBox {
+	text-align:right;
+	.basicCancel {
+		font-size:4rem;
+		padding:3rem;
+	} 
+}
+.pirchCBoxContent {
+	padding:1rem;
+}
+
+/*
+ * Reusable component styles
+ */
+
+.paddingBottom22 {
+	padding-bottom: 22px;
+ }
+
+.paddingBottom12 {
+	padding-bottom: 12px;
+}
+
+.colorBlack {
+	color: $black;
+}
+
+.colorGrey {
+	color: $grey;
+}
+
+.tabBar {
+	position: relative;
+	height: $headerBarHeight;
+	margin-bottom: 48px;
+	.tab {
+		background-color: $black;
+		color: $darkGrey;
+		position: absolute;
+		text-align: center;
+		line-height: $headerBarHeight;
+		top: 0%;
+		height: 100%;
+		border-right: 1px solid $darkGrey;
+	}
+	.tab.selected {
+		background-color: $green;
+		color: $white;
+	}
+}
+
+
+
+
+button {
+	@include squareButton($green);
+    cursor: pointer;
+}
+
+.button {
+	cursor: pointer;
+}
+
+.logo-l {
+    display: block;
+    padding-top:3rem;
+    padding-bottom:4em;
+}
+
+.titleBar {
+	width: 100%;
+    border-top:0px;
+	font-size: 1.0rem;
+	color:white;
+	text-transform:uppercase;
+	background-color: $black;
+	text-align: center;
+	height: $headerBarHeight;
+	h1 {
+		display:inline;
+		font-family:$boldFont;
+		font-size:24px;
+	}
+    a {		
+        font-size: 84px;
+		float: right;
+		padding: 0 2rem;
+
+        &:first-child {
+            float:left;
+        }
+    }
+    &.backOnly{
+        a {
+            position: absolute;
+            left: 0px;
+        }
+    }
+	@include allA {
+		color:$white;
+	}
+	h1 {
+		line-height: $headerBarHeight;
+	}
+	a,h1 {
+		position:relative;
+	}
+    //  We need this plus button on the customers list.  
+    //  if you need to remove data elements then please use a different template.  - BMW
+    // 
+    a:last-child {
+        //display:none;
+    }
+}
+.titleBarGreen{
+    border-top:0px;
+	font-size: 1.0rem;
+	color:white;
+	background-color: $green;
+	text-align: center;
+	height: $headerBarHeight;
+	h1 {
+    	text-transform:uppercase;
+		font-family:$boldFont;
+		font-size:24px;
+	}
+}
+
+.searchBarContainer {
+    position:absolute;
+    display:block;
+    width:100%;
+    height: $searchBarHeight;
+    top: $headerBarHeight;
+    @include vendorPrefix("box-shadow", 0px 3px .25rem rgba(0,0,0,.25));
+    z-index:1;
+    .storeMapIcon {
+        position:absolute;
+        right:44px;
+        top:30px;
+    }
+}
+
+.fullBodyContainer {
+    position:absolute;
+    display:block;
+    width:100%;
+    height:100%;
+    left:0px;
+    top:0px;
+    background-color:#FFFFFF;
+}
+
+header.light-tab-header{
+	// Vars
+	$bottom-margin: 48px;
+
+	position: relative;
+	background-color: $white;
+	height: $headerBarHeight;
+	margin-bottom: $bottom-margin;
+    @include vendorPrefix("box-shadow", 0px 3px .25rem #aaa);
+	a{
+		width: 200px;
+		color: #a5a5a5;
+		height: 100%;
+		line-height: $headerBarHeight;
+		font-size: 0.9rem;
+		font-weight: bold;
+		text-align: center;
+	}
+	a.two-tab-right{
+		float: left;
+	}
+	a.two-tab-left{
+		float: right;
+	}
+	div.two-tab-right, div.two-tab-left{
+		position: absolute;
+		top: 0%;
+		left: 50%;
+		width: 50%;
+		height: 100%;
+	}
+	div.two-tab-left{
+		left: 0%;
+	}
+	.selected{
+		color: #000;
+	}
+}
+
+.tabContentContainer {
+	min-height: 30px;
+	margin-bottom: 40px;
+}
+
+.clear {
+	clear: left;
+}
+
+.floatRight {
+	float: right;
+}
+
+.floatLeft {
+	float: left;
+}
+
+.floatH {
+    position:relative;
+    display:block;
+    float:left;
+    clear:none;
+}
+
+.floatV {
+    position:relative;
+    display:block;
+    float: left;
+    clear:left;
+}
+
+.gridContainer {
+	width: 100%;
+	position: absolute;
+    //top: $headerBarHeight + $searchBarHeight;
+}
+
+.popupColor {
+    background-color: $green;
+}
+
+.search-mag-icon {
+    @include floatH;
+    background-image: url("/Images/UI/search-mag-icon.png");
+    width:26px;
+    height:26px;
+}
+
+/*---------------------------------------------- Buttons, Dots and Useful Clickables ------------------------------------------------------------------ */
+a.greenBlockButton{
+    @include blockButton;
+    background-color: $green;
+   color: $white;
+}
+
+a.greyBlockButton{
+    @include blockButton;
+    background-color: $lightGrey;
+    color: $green;
+    
+}
+
+a.mediumGreyDot{
+    @include circle;
+    background-color: $mediumGrey;
+    color: $white;
+    display:block;
+    height: 1rem;
+    @include allAStates{
+        color: $white;
+    }
+    width: 1rem;
+    text-align:center;
+    line-height: .7rem;
+    font-size: 2rem;
+}
+
+a.cancel{
+    background-color: $darkGreen;
+    @include allAStates{
+        color: white;
+    }
+    padding: .7rem 1rem;
+}
+
+
+a.done{
+    background-color: $black;
+    @include allAStates{
+        color: white;
+    }
+    padding: .7rem 1rem;
+}

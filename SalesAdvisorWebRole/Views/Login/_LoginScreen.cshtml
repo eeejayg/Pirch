@@ -1,0 +1,21 @@
+﻿<!-- TODO get this into modern structure -->
+<script type="text/template" id="loginScreen">
+    <div class="loginImgFrame circle">
+        <img src="<%=image%>" alt="<%=name%>" /> 
+    </div>
+    @Html.AntiForgeryToken()
+    <p><%=name%></p>
+    <a href="#chooseFace">change</a>
+    <br />
+    <input id="password" type="password" placeholder="Password" data-val-required="The password data field is required"/>
+    <br />
+    <button class="squarebutton" id="signIn">Sign In</button>
+</script>
+
+<script type="text/template" id="signingIn">
+             <div class="loading_word">
+                <div>
+                    <span>S</span><span>I</span><span>G</span><span>N</span><span>I</span><span>N</span><span>G</span>&nbsp;<span>I</span><span>N</span>
+               </div>
+            </div>
+</script>

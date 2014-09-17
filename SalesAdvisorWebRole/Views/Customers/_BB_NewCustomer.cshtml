@@ -1,0 +1,23 @@
+﻿<script type="text/template" id="newCustomer">
+       <section id="newCustomers">
+           <section class="cancelBox">
+                 <a href="#" class="basicCancel">x</a>
+           </section>
+           <section id="formData">
+           <input type="text" id="firstName" placeholder="First Name"/>
+       <input type="text" id="lastName"  placeholder="Last Name"/>
+       <div id="customerTypes">
+           @foreach(var name in @ViewBag.customerTypes){
+           <input type="checkbox" id="@name"  />
+           <label for="@name">@name</label>
+       }
+       </div>
+       <input type="text" id="email"  placeholder="email (optional)"/>
+       <input type="text" id="phone"  placeholder="phone (optional)"/>
+       <input type="checkbox" name="mobile" value="0"/>
+       <a href="#" id="mobile"></a>
+       <!-- Will need later - BMW <a href="#moreInfo">+ more info</a> -->
+       <button id="next">next &gt;</button>
+       </section>
+           </section>
+</script>

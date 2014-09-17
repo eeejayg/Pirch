@@ -1,0 +1,11 @@
+﻿<script type="text/template" id="BB_TMP_projectType">
+<section id="chooseProject">
+    <h1>What type of project is it?</h1>
+    @foreach (var pt in @ViewBag.projectTypes)
+    {
+        <a href="#chooseRooms" class="newProjectButton circle" data-id="@pt.Id">
+            @pt.Name
+        </a>
+    }
+    </section>
+</script>

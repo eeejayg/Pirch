@@ -1,0 +1,107 @@
+﻿@using SalesAdvisorSharedClasses.Models;
+@using SalesAdvisorWebRole.Controllers;
+@using System.Text;
+@using System.Web.Mvc;
+@using System.Web.Mvc.Html;
+
+@helper Picturefill(ResponsiveImage img)
+{
+    /* Pass a ResponsiveImage model
+     */
+    <span class="@img.classname" data-picture data-alt="@img.alt">
+        @if (img.src != null) {
+            <span data-src="@img.src"></span>
+        }
+        @{
+            HtmlString classString;
+            HtmlString mediaString;
+            HtmlString defaultImageClassString = new HtmlString("");
+        }
+        @foreach (ResponsiveImageSrc src in img.srcset )
+        {
+            classString = src.classname == null ? new HtmlString("") : new HtmlString("class=\"" + src.classname + "\"");
+            if (src.media == null) {
+                defaultImageClassString = classString;
+                mediaString = new HtmlString("");
+            } else {
+                mediaString = new HtmlString("data-media=\"" + src.media + "\"");
+            }
+            <span @classString data-src="@MvcHtmlString.Create(src.src)" @mediaString></span>
+        }
+        <noscript>
+            <img src="@MvcHtmlString.Create(img.src)" alt="@img.alt" @defaultImageClassString />
+        </noscript>
+    </span>
+}
+@helper Picturefill(String src){
+        <span data-picture>
+        <span data-src="@MvcHtmlString.Create(src)"></span>
+        <noscript>
+            <img src="@MvcHtmlString.Create(src)" alt="" />
+        </noscript>
+    </span>
+}
+@helper Picturefill(String src, params String[] srcset)
+{
+    /* Pass an arbitrary number of parameters, picture src, then media query.
+     * An empty string for the media query is the default image
+     * ex. ViewHelperMethods.Picturefill("bla.jpg", "min-width: 300px")
+     */
+    <span data-picture>
+        <span data-src="@MvcHtmlString.Create(src)"></span>
+        @{var l = srcset.Length;}
+        @for (int i = 0; i < l;i+=2 )
+        {
+            <span data-src="@MvcHtmlString.Create(srcset[i])" data-media="@srcset[i+1]"></span>
+        }
+        <noscript>
+            <img src="@src" alt="" />
+        </noscript>
+    </span>
+}
+
+/**
+ * This may change in the future
+ */
+@helper Header(String leftHtml, String title, String rightHtml) 
+{
+    <header class="titleBar">
+        @MvcHtmlString.Create(leftHtml)
+        <h1>@MvcHtmlString.Create(title)</h1>
+        @MvcHtmlString.Create(rightHtml)
+    </header>
+}
+
+@helper CdnImageSrc(String imageSrc)
+{
+    String finalSrc = "";
+    if (imageSrc != null) {
+        if (String.Compare(imageSrc.Substring(0, 4), "http") == 0) {
+            finalSrc = imageSrc;
+        } else {
+            if (String.Compare(imageSrc.Substring(0, 1), "/") == 0) {
+                // Make sure it's formatted correctly, no preceding slashes!
+                imageSrc = imageSrc.Substring(1);
+            }
+            StringBuilder sb = new StringBuilder();
+            sb.Append(BaseRequirementsController.GetCDNDomain());
+            sb.Append(imageSrc);
+            sb.Append(".ashx");
+            finalSrc = sb.ToString();
+        }
+    }
+    
+    @(MvcHtmlString.Create(finalSrc))
+}
+
+@helper UCFirst(string s)
+{
+	// Check for empty string.
+	if (string.IsNullOrEmpty(s))
+	{
+        @(MvcHtmlString.Create(""))
+	}
+	// Return char and concat substring.
+	    @(MvcHtmlString.Create(char.ToUpper(s[0]) + s.Substring(1))) 
+    }
+}

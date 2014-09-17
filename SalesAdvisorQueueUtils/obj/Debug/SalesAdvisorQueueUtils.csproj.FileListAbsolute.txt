@@ -1,0 +1,10 @@
+C:\All\pirch\SalesAdvisorQueueUtils\bin\Debug\SalesAdvisorQueueUtils.dll
+C:\All\pirch\SalesAdvisorQueueUtils\bin\Debug\SalesAdvisorQueueUtils.pdb
+C:\All\pirch\SalesAdvisorQueueUtils\bin\Debug\Microsoft.Practices.EnterpriseLibrary.WindowsAzure.Autoscaling.Configuration.dll
+C:\All\pirch\SalesAdvisorQueueUtils\bin\Debug\Microsoft.ServiceBus.dll
+C:\All\pirch\SalesAdvisorQueueUtils\bin\Debug\Microsoft.Practices.EnterpriseLibrary.WindowsAzure.Autoscaling.Configuration.pdb
+C:\All\pirch\SalesAdvisorQueueUtils\bin\Debug\Microsoft.Practices.EnterpriseLibrary.WindowsAzure.Autoscaling.Configuration.xml
+C:\All\pirch\SalesAdvisorQueueUtils\bin\Debug\Microsoft.ServiceBus.xml
+C:\All\pirch\SalesAdvisorQueueUtils\obj\Debug\SalesAdvisorQueueUtils.csprojResolveAssemblyReference.cache
+C:\All\pirch\SalesAdvisorQueueUtils\obj\Debug\SalesAdvisorQueueUtils.dll
+C:\All\pirch\SalesAdvisorQueueUtils\obj\Debug\SalesAdvisorQueueUtils.pdb

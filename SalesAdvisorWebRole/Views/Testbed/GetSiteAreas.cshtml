@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Product List";
+}
+<h1>Site areas?</h1>
+@foreach (var sitearea in @ViewBag.siteAreas) {
+    <div>
+        <h3>@sitearea.Name</h3>
+        <p>@sitearea.SiteAreaId.ToString()</p>
+        <a href="/Testbed/GetProductForSiteArea?siteArea=@sitearea.SiteAreaId"><img src="@ViewHelperMethods.CdnImageSrc(sitearea.ImageUrls[0])?width=100" /></a>
+    </div>
+}
+

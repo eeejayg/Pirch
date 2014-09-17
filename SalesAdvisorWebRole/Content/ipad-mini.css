@@ -1,0 +1,22 @@
+/**
+ * Global ipad-mini stylesheet.  Lets set the width on a #screen to mock up 
+ * the width for display purposes.  We should be able to change out this 
+ * stylesheet with other widths/etc for the inevitable "whats it look like on <insert my pet device here>"
+ * This overwrites the body color, adding a background and makes a simple screen outline with a set width
+ * to match the ipad mini
+ * -BMW
+ */
+body{ 
+	background-color: #999;
+    padding: 20px;
+}
+
+#screen{ /*This is only for simulating a size in the display.  Take it out when going to production.  
+             DO NOT key anything off this or this tag*/
+	margin:auto;
+	background-color: white;
+	width: 768px;
+	border: 24px solid black;
+	
+}
+

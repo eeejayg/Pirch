@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "AllProducts";
+    Layout = "~/Views/Shared/_JSONLayout.cshtml";
+}
+"CABINETGUID": {
+        "Name": "Cabinet",
+        "SKU": "aaa-bbb-ccc-111",
+        "Description": "This is a foo made of the finest Corinthian bar with hand-crafted baz trim.",
+        "AddOns": [
+             {
+                 "GUID": "asgasdgaswe",
+                 "Name": "Extra drawer",              
+                 "Description": "This optional drawer comes inside the cabinet"
+            }
+],
+        "OptionGroups": [
+            { 
+                "Name": "Wood",
+                "Description": "Choose which kind of wood you would like for this cabinet",
+                "AllowMultiple": false,
+                "GUID": "dgasdgas",
+        "Options":[
+             {
+                 "Name": "Oak",
+                 "Description": "Great Oak..",
+                 "GUID": "AKGDLKJGDSIOIO"
+             },
+             {
+                 "Name": "Walnut",
+                 "Description": "Walnut finish is great because...",
+                 "GUID": "fdhfdshfsdhfd"
+             }
+        ]
+    },
+{
+                 "Name": "Chrome",
+                 "Description": "What kind of foot style do you want",
+                 "AllowMultiple": false,
+                 "GUID": "FSGUID",
+                 "Options":[
+             {
+                 "Name": "Silver",
+                 "Description": "Silver chrome finish..",
+                 "GUID": "hfsdhsdfhs"
+             },
+             {
+                 "Name": "Gold ",
+                 "Description": "Gold finish is great because...",
+                 "GUID": "fdhfdshfsdhfd"
+             }
+                  ]
+}
+]
+},
+    "EMPTYDESKGUID":{
+        "Name": "Desk",
+        "SKU": "45124634",
+        "Description": "This is a desk with no options or add ons",
+        "AddOns": [],
+        "OptionGroups": []
+   }

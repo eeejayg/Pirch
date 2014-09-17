@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "ProductInstanceCreate";
+}
+
+<h2>ProductInstanceCreate</h2>
+@section Scripts{
+    <script src="/Scripts/bb/models/products.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('button').on('click', function () {   
+                var productInstance = new pirch.models.productInstance();
+                productInstance.set('ProductTypeGUID', 'CABINETGUID');
+                productInstance.set('CustomerId', '2');
+                productInstance.save();
+            });
+        });
+    </script>
+}
+
+
+<button>Create PI</button>

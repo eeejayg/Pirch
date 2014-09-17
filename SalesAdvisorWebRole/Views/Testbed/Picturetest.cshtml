@@ -1,0 +1,26 @@
+﻿@using SalesAdvisorWebRole.Models;
+@{
+    ViewBag.Title = "Picturetest";
+    ResponsiveImage img = new ResponsiveImage();
+    img.src = "default img";
+    img.alt = "alt tag";
+    img.classname = "classnamebla";
+    img.srcset.Add(new ResponsiveImageSrc("medium img", "alt", "mediumsize"));
+    img.srcset.Add(new ResponsiveImageSrc("large img", "alt", "largesize"));
+    // Logo image
+    ResponsiveImage logo = new ResponsiveImage();
+    logo.classname = "logowrapper";
+    logo.alt = "Site logo";
+    logo.srcset.Add(new ResponsiveImageSrc(src:"/Images/Logo.png", classname: "normal-size"));
+    logo.srcset.Add(new ResponsiveImageSrc(src: "/Images/Logo@2x.png", classname:"double-size", media: "(min-width: 800px)"));
+}
+<style>
+    .logowrapper img {
+        width: 512px;
+        height: 72px;
+    }
+</style>
+@ViewHelperMethods.Picturefill("/Images/people/Selina.png")
+@ViewHelperMethods.Picturefill(logo)
+@ViewHelperMethods.Picturefill(img)
+<h1>Cookie value: @ViewBag.cookieValue</h1>

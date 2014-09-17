@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Product List";
+}
+
+@section Styles {
+          @Styles.Render("~/products/css")   
+
+}
+@section Scripts{
+    @Html.Partial("_BB_Shared")
+    @Html.Partial("_BB_Products")
+    @Scripts.Render("~/bundles/products")   
+}
+<section id="products" data-current-user ="@ViewBag.user.id">
+
+</section>

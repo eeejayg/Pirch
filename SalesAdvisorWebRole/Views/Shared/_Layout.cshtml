@@ -1,0 +1,34 @@
+﻿@using SalesAdvisorWebRole.Controllers;
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - Pirch - Sales Advisor</title>
+        <meta name="apple-mobile-web-app-capable" content="yes" /> 
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <link rel="apple-touch-icon" href="/Images/AppIcons/AppIcon57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/Images/AppIcons/AppIcon72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/Images/AppIcons/AppIcon114.png" />
+        <link rel="icon" href="/Images/AppIcons/AppIcon16.png" type="image/png" />
+        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        @Styles.Render("~/base-styles/css")
+        @RenderSection("Styles", required: false)
+            <script type="text/javascript">
+                pirchGlobals = {};
+                pirchGlobals.cdn = "@BaseRequirementsController.GetCDNDomain()";
+            </script>
+
+    </head>
+    <body>
+        <noscript>
+            Please turn on JavaScript for this app to function appropriately.
+        </noscript>
+        <div>
+            @Html.Partial("_LoginPartial")
+        </div>
+            @RenderBody()
+            @Scripts.Render("~/bundles/global-scripts")
+            @RenderSection("Scripts", required: false)
+
+    </body>
+</html>

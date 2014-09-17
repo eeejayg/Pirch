@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "passFail";
+    Layout = "~/Views/Shared/_JSONLayout.cshtml";
+}
+"success": "@ViewBag.success",
+"message": "@ViewBag.message"
+@if(@ViewBag.IdType != "" && @ViewBag.IdType != null){
+<text>, "@ViewBag.IdType": "@ViewBag.Id"</text>
+}

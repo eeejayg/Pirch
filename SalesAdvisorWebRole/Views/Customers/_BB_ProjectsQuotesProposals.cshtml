@@ -1,0 +1,224 @@
+﻿
+<script type="text/template" id="editQuotePage">
+    <p class="xLargeText">
+        <%= Name %>
+    </p>
+    <p>Price: <%= totalPrice() %></p>
+    <section class="regionTabBar">
+    </section>
+    <section class="regionTabs">
+    </section>
+</script>
+
+@**********************  Marionette templates *************************@
+<script type="text/template" id="customerProject">
+    <div class="customerProject clear">
+        <div class="pagePadding" style="padding-bottom: 20px;">
+            <h2 class="largeTitleText paddingBottom22 black"><%= Name %></h2>
+            <% var deadline = deadlineString(); if (deadline) { %>
+            <p class="smallText paddingBottom12">
+                <span class="colorGrey">Enjoy by </span>
+                <span class="colorBlack"><%= deadline %></span>
+            </p>
+            <% } %>
+        </div>
+        <div class="tabContainer">
+        </div>
+        <div class="tabContentContainer">
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="customerHeader">
+    <header class="titleBar backOnly">
+        <a href="#"><img src="Images/UI/backArrow.png" /></a>
+        <h1>
+             <%=FirstName%> <%=LastName%>
+        </h1>
+    </header>
+</script>
+
+<script type="text/template" id="headerWithBackAndCustomText">
+    <header class="titleBar backOnly">
+        <a href="#"><img src="Images/UI/backArrow.png" /></a>
+        <h1>
+             <%=headerText%>
+        </h1>
+    </header>
+</script>
+
+<script type="text/template" id="customHeaderWithCustomLink">
+    <header class="titleBar backOnly">
+        <a href="<%=link%>"><img src="Images/UI/backArrow.png" /></a>
+        <h1>
+             <%=title%>
+        </h1>
+    </header>
+</script>
+
+<script type="text/template" id="customerDetailCollection">
+    <div class="customerDetailCollection pagePadding">
+        <p class="largeText paddingBottom12"><%= name %></p>
+        <div class="customerDetailCollectionProducts">
+            <div class="addMiscProductInstance" style="background-image: url(<%= getRoomAddImage(room) %>)">
+                +
+            </div>
+            <% _.each(productInstances, function(prod) { %>
+                <!-- TODO Get this into a responsive images template -->
+                <img src="<%=prod.getProductType().firstImage()%>" alt="<%=prod.getProductType().get('Name')%>" />
+            <% }); %>
+            <div class="viewAll">view all ></div>
+        </div>
+    </div>
+</script>
+
+
+
+<script type="text/template" id="comingSoon">
+    <h3>Coming Soon...</h3>
+</script>
+
+<script type="text/template" id="empty">
+    
+</script>
+
+<script type="text/template" id="customerDetailProposal">
+    <div class="proposalContainer blockFloat">
+
+        <div class="proposalBox" style="background-image: url(/Images/proposalPlaceholder.png)">
+            <div class="tempDelete">delete</div>
+        </div>
+        <div class="smallText paddingBottom12 colorBlack"><%= Name %></div>
+        <div class="smallText paddingBottom12 colorGrey"><%= ProductInstances.length %> items</div>
+    </div>
+</script>
+
+
+<script type="text/template" id="customerDetailProposals">
+    <div class="newProposal proposalContainer">
+        <img src="/Images/proposalEmptyPlaceholder.png" />
+        <div class="miniText paddingBottom12 colorBlack">+ new proposal</div>
+    </div>
+</script>
+
+<script type="text/template" id="customerDetailProposalsEmpty">
+    <div class="newProposal pagePadding">
+        <div style="text-align:center; position: relative;">
+            <img class="centeredImage" src="/Images/proposalOobe.png" style="top: 70px; left:-107px; position:absolute; margin: 0% 50%;" />
+        </div>
+        <div class="smallText paddingBottom12 colorGrey" style="text-align:center; padding: 215px 0px 50px;">
+            Create a proposal for a group of products
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="customerDetailQuote">
+    <div class="quoteContainer blockFloat button">
+
+        <div class="quoteBox" style="background-image: url(/Images/proposalPlaceholder.png)">
+            <!-- <div class="tempDelete button">delete</div>-->
+        </div>
+        <div class="floatLeft largeText paddingBottom12 colorBlack"><%= Name %></div>
+        <div class="floatRight largeText paddingBottom12 colorBlack"><%= pirch.utils.toMoneyString(getTotal()) %></div>
+        <!--<div class="floatRight clear footnoteText paddingBottom12 colorGrey">Date Placeholder</div>-->
+    </div>
+</script>
+
+<script type="text/template" id="customerDetailQuotes">
+@*  // BETA: Remove new quote button
+    <div class="newQuote button row pagePadding">
+        <div class="miniText paddingBottom12 colorBlack">+ new quote</div>
+    </div>
+    *@
+</script>
+
+<script type="text/template" id="customerDetailQuotesEmpty">
+    <div class="newQuote button pagePadding">
+        <div style="text-align:center; position: relative;">
+            <img class="centeredImage" src="/Images/proposalOobe.png" style="top: 70px; left:-107px; position:absolute; margin: 0% 50%;" />
+        </div>
+        <div class="smallText paddingBottom12 colorGrey" style="text-align:center; padding: 215px 0px 50px;">
+            Create a quote for a group of products
+        </div>
+    </div>
+</script>
+
+
+<script type="text/template" id="goToProjectCreate">
+    <div class="newQuote button pagePadding">
+        <div style="text-align:center; position: relative;">
+            <a href="/customers/<%=Id%>/projects/"><img class="centeredImage" src="/Images/proposalOobe.png" style="top: 70px; left:-107px; position:absolute; margin: 0% 50%;" /></a>
+        </div>
+        <div class="smallText paddingBottom12 colorGrey" style="text-align:center; padding: 215px 0px 50px;">
+            Create a new project
+        </div>
+    </div>
+
+</script>
+    
+<script type="text/template" id="quoteLayout">
+    <section id="quoteNavigation" ></section>
+    <section id="quoteInformation"></section>
+    <section id="roomTabs"><!--Rooms Tab Not Implemented--></section>
+    <section id="productInstances"></section>
+</script>
+
+<script type="text/template" id="quoteInformationLayout">
+    <section class="pricingInformation">
+        <span class="xLargeText viewOnly"><%=pirch.utils.toMoneyString(priceTotal())%></span>
+        <input class="xLargeText editOnly" type="text" value="<%=pirch.utils.toMoneyString(priceTotal())%>"/>
+    </section>
+    <h2 class="xLargeText"><%=roomsCategoryNames()%> <%=ProjectType.Name%></h2>
+    <section id="customerData"></section>
+    <p class="largeTextGrey"><%=Name%></p>
+</script>
+
+<script type="text/template" id="customerDataForQuote">
+    <p class="largeText"><%=FirstName%> <%=LastName%><%=showRoles()%></p>
+</script>
+
+<script type="text/template" id="RoomTabsForProject">
+    TODO
+</script>
+
+
+<script type="text/template" id="ProductInstanceForQuote">
+    <div><%=pirch.utils.image({src:getImage(), alt:getName()})%></div>
+    <div class="largeText"><strong><%=getManufacturerName()%></strong> <%=getName()%> &nbsp;</div>
+    <div>
+        <span class="viewOnly largeText"><%=pirch.utils.toMoneyString(getPrice())%></span>
+        <a href="#" class="mediumGreyDot deleteProductInstance editOnly" >-</a>
+        <input type="text" class="editOnly largeText" value="<%=pirch.utils.toMoneyString(getPrice())%>" />
+        
+    </div>
+</script>
+
+<script type="text/template" id="projectViewQuoteNav">  
+    <a href="#<%=CustomerId%>/quotes/<%=QuoteId%>/edit" id="editQuote" class="greyBlockButton viewOnly">edit</a>
+</script>
+
+<script type="text/template" id="quoteEditHeaderBar">
+    <header class="titleBarGreen">
+        <div>
+            <a href="#" class="cancel">cancel</a>
+        </div>
+        <h1><%= title %></h1>
+        <div>
+            <a href="#" class="done">done</a>
+        </div>
+        <div class="menu">
+            <a href="#" class="hotdogs"><img src="/Images/icons/menu.png"  alt="hot dogs"/></a>
+        </div>
+    </header>
+</script>
+
+<script type="text/template" id="goToTemplate">
+     <div class="newQuote button pagePadding">
+        <div style="text-align:center; position: relative;">
+            <a href="<%=link%>"><img class="centeredImage" src="/Images/proposalOobe.png" style="top: 70px; left:-107px; position:absolute; margin: 0% 50%;" /></a>
+        </div>
+        <div class="smallText paddingBottom12 colorGrey" style="text-align:center; padding: 215px 0px 50px;">
+            <%=message%>
+        </div>
+    </div>
+</script>

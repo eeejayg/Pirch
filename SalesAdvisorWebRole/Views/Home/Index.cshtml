@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+@section Styles {
+    @Styles.Render("~/homepage/css")   
+}
+
+<section id="homePage">
+   <section>
+       @Html.Partial("_Logo")
+       <img src="@ViewBag.user.ImageString()" alt="@ViewBag.user.firstName" /> 
+        @Html.Partial("_LogoutForm")
+   </section>
+   <section>
+            <ul>
+<!--            <li><a href="#">Recent</a></li> -->
+            <li>@Html.ActionLink("Customers","Index", "Customers")</li>
+<!--            <li><a href="#">Queue</a></li> -->
+            <li>@Html.ActionLink("Products","Index", "Products")</li>
+            </ul>
+   </section>
+ </section>

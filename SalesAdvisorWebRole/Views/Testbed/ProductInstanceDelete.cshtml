@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "ProductInstanceDelete";
+}
+
+<h2>ProductInstanceDelete</h2>
+@section Scripts{
+    <script src="/Scripts/bb/models/products.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('button').on('click', function () {   
+                var productInstance = new pirch.models.productInstance();
+                productInstance.set('Id', '623');
+                productInstance.destroy();
+            });
+        });
+    </script>
+}
+
+
+<button>Delete PI</button>

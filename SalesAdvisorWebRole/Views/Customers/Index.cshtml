@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Customers List";
+}
+
+@section Styles {
+          @Styles.Render("~/customers/css")   
+
+}
+@section Scripts{
+    @Html.Partial("_BB_Shared")
+    @Html.Partial("_BB_NewCustomer")
+    @Html.Partial("_BB_ListCustomers")
+    @Html.Partial("_BB_DetailCustomers")
+    @Html.Partial("_BB_ProjectsQuotesProposals")
+    @Scripts.Render("~/bundles/customers")   
+}
+<section id="customers" data-current-user ="@ViewBag.user.id">
+
+</section>  

@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "ProductInstanceUPdate";
+}
+
+<h2>ProductInstanceCreate</h2>
+@section Scripts{
+    <script src="/Scripts/bb/models/products.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('button').on('click', function () {   
+                var productInstance = new pirch.models.productInstance();
+                productInstance.set('Id', 625);
+                productInstance.set('Price', 23.23);
+                productInstance.save();
+            });
+        });
+    </script>
+}
+
+
+<button>Update Product Instance</button>

@@ -1,0 +1,52 @@
+﻿<script type="text/template" id="customerListLayout">
+    <header class="titleBar">
+        <a href="/Home"><img src="Images/UI/backArrow.png" /></a>
+        <h1>Customers</h1>
+        <a href="#newCustomer"><img src="Images/UI/headerPlus.png" /></a>
+    </header>
+    <div id="currentSalesAssociate">
+    </div>     
+    <section id="selectAssociate">
+    </section>
+    <section id="customerSearch" class="wideSearch">
+        <div class="floatV" style="width:100%;">
+       <div class="search-mag-icon"></div><input type="text" placeholder="Search for customers"/>
+            </div>
+    </section>
+    <section id="customerListView">
+    </section>
+</script>
+
+<script type="text/template" id="customerListItem">
+       <a href="#<%=Id%>/info/about" data-customer-id="<%=Id%>">
+            <div><%=FirstName%> <%=LastName%></div>
+            <div>
+                <% 
+                if(Projects.length > 0){
+                    rooms =Projects.at(0).get('Rooms'); 
+                    roomsJSON = rooms.toJSON();
+                    console.log(roomsJSON);
+                    _.each(roomsJSON, function(room){%>
+                        <span class="dot <%=room.RoomCategory.Name.toLowerCase()%>"><%=room.RoomCategory.Name[0].toUpperCase()%></span>                
+                    <%});
+                }
+                %>
+            </div>
+            <div>
+                <% if (typeof Projects[0]!=="undefined") { %>
+                    <%=pirch.utils.toDate(Projects[0].Deadline) %>
+                <%}%>
+            </div>
+       </a>
+</script>
+
+<script type="text/template" id="currentAssociateTemplate">
+     @ViewHelperMethods.Picturefill("<%=imagePath%>")
+     <p><%=firstName%></p>
+</script>
+<script type="text/template" id="salesAssociateOne">
+    <a href="#">
+         @ViewHelperMethods.Picturefill("<%=imagePath%>")
+         <p><%=firstName%></p>
+    </a>
+</script>

@@ -1,0 +1,160 @@
+﻿@*
+    These are templates for the info/projects tabs.  Each tab has its own template and the router deals with loading the current customer, then deep-linking to all possible combinations
+*@
+
+<script type="text/template" id="customerDetailLayout">
+    <section id="primaryTabContainer">
+
+    </section>
+    <section id="secondaryTabControl">
+        <ul class="tabs" id="childTabs">
+        </ul>
+    </section>
+    <section id="childTabContainer">
+    </section>
+</script>
+
+
+
+@**********************  The info tab*************************@ 
+<script type="text/template" id="customerFlatDataDetail">
+    <!--<a class="edit" href="#<%=Id%>/editInfo/temp">edit</a>-->
+    <h2>
+           <%=FirstName%> <%=LastName%>
+    </h2>
+    <section id="displayEmails">
+
+    </section>
+    <section id="displayPhoneNumbers">
+    </section>
+    <section id="displayAddresses">
+    </section>
+
+</script>
+
+<script type="text/template" id="emailDisplayTemplate">
+        <p><%= Address %></p> 
+</script>
+<script type="text/template" id="phoneNumberDisplayTemplate">
+        <p><%= PhoneNumber %></p> 
+</script>
+
+<script type="text/template" id="addressDisplayTemplate">
+                <%=AddressLine1%><br />
+                <%=AddressLine2%><br />
+                <%=AddressLine3%><br />
+                <%=City%>, <%=State %><%=PostalCode %><br />
+</script>
+
+
+@**********************  The info edit tab*************************@ 
+<script type="text/template" id="customerFlatDataEdit">
+    <div id="customerFlatData">
+        <input class="Id" type="hidden" value="<%=Id%>" />
+        <input class="FirstName" type="text" value="<%=FirstName%>" data-param-name="FirstName"/>
+        <input class="LastName" type="text" value="<%=LastName%>" data-param-name="LastName"/>
+        <input type="checkbox" id="Owner" data-param-name="Owner" <% if (Owner ==true){%>checked="checked"<%}%>>
+        <label for="Owner">Owner</label>
+        <input type="checkbox" id="Architect"  data-param-name="Architect"  <% if (Architect == true){%>checked="checked"<%}%> />
+        <label for="Architect">Architect</label>
+        <input type="checkbox" id="Designer"  data-param-name="Designer" <% if (Designer == true){%>checked="checked"<%}%>>
+        <label for="Designer">Designer</label>
+        <input type="checkbox" id="Builder"  data-param-name="Builder"<% if (Builder  ==true){%>checked="checked"<%}%>>
+        <label for="Builder">Builder</label>
+        <input type="checkbox" id="Vendor"  data-param-name="Vendor" <% if (Vendor ==true){%>checked="checked"<%}%>>
+        <label for="Vendor">Vendor</label>
+        <input type="checkbox" id="Realtor"  data-param-name="Realtor"<% if (Realtor ==true){%>checked="checked"<%}%>>
+        <label for="Realtor">Realtor</label>
+    </div>
+    <section id="emailsEdit">
+    </section>
+    <section id="phoneNumbersEdit">
+    </section>
+    <section id="addressesEdit">
+    </section>
+    <button>save</button>
+</script>
+
+
+<script type="text/template" id="emailEditTemplate">
+    <input type="hidden" class="Id" value="<%=Id%>" />
+    <label>Email</label><input type="text" data-param-name="Address" value="<%=Address%>" /><br />
+</script>
+
+<script type="text/template" id="phoneNumberEditTemplate">
+     <label>Phone Number</label><input type="text" data-param-name="PhoneNumber" value="<%=PhoneNumber%>" /><br />       
+</script>
+
+
+<script type="text/template" id="addressEditTemplate">
+                <label>Address Line 1</label><input type="text" data-param-name="AddressLine1" value="<%=AddressLine1%>" /><br />
+                <label>Address Line 2</label><input type="text" data-param-name="AddressLine2" value="<%=AddressLine2%>" /><br />
+                <label>Address Line 3</label><input type="text" data-param-name="AddressLine3" value="<%=AddressLine3%>" /><br />
+                <label>City</label><input type="text" data-param-name="City" value="<%=City%>" /><br />
+                <label>State</label><input type="text" data-param-name="State" value="<%=State %>" /><br />
+                <label>Zip</label><input type="text" data-param-name="PostalCode" value="<%=PostalCode %>" /><br />
+</script>
+
+
+
+
+@**********************  The customerInfoEdit tab*************************@ 
+<script type="text/template" id="customerInfoEdit">
+       <input type="text" id="firstName<%=Id%>" placeholder="First Name" value="<%=FirstName%>"/>
+       <input type="text" id="lastName<%=Id%>"  placeholder="Last Name"value="<%=LastName%>"/>
+       <div id="customerTypes">
+           @foreach(var name in @ViewBag.customerTypes){
+               <input type="checkbox" id="@name<%=Id%>"  />
+               <label for="@name<%=Id%>" class="labelFor@(name)<%=Id%>">@name</label>
+           }
+       </div>
+        <section class="Emails">
+            <% _.each(Emails.toJSON(), function(email) { %>
+                <div>
+                    <input type="text" id="email<%=Id%>"  placeholder="email (optional)" value="<%=email.Address%>"/>
+                </div>
+            <% }); %>
+        </section>
+        <br />
+        <section class="PhoneNumbers">
+            <% _.each(PhoneNumbers.toJSON(), function(PhoneNumber) { %>  
+                <div>
+                    <input type="text" id="phone<%=Id%>"  placeholder="phone (optional)" value="<%=PhoneNumber.PhoneNumber%>"/>
+                    <input type="checkbox" name="mobile" id="mobile<%=Id%>"value="0"/>
+                    <label for="mobile<%=Id%>">M</label>
+                </div>
+            <% }); %>
+        </section>
+        <br />
+        <section class="Addresses">
+            <% _.each(Addresses.toJSON(), function(address) {%>
+                <div>
+                    <%=_.template($('#addressForm').html())(address)%>
+                </div>
+            <%}); %>
+        </section>
+        <br />
+
+        <button>Save</button>
+</script>
+
+@***************** ADDRESS FORM *************************************@
+<script type="text/template" id="addressForm">
+        <label for="AddressLine1<%=Id%>">Address</label><br />
+        <input id="AddressLine1<%=Id%>" value="<%=AddressLine1%>"/><br />
+        <input id="AddressLine2<%=Id%>" value="<%=AddressLine2%>"/><br />
+        <input id="AddressLine3<%=Id%>" value="<%=AddressLine3%>"/><br />
+        <label for="City<%=Id%>">City</label><br />
+        <input id="City<%=Id%>" value="<%=City%>"/><br />
+        <label for="State<%=Id%>">State</label><br />
+        <input id="State<%=Id%>" value="<%=State%>"/><br />
+        <label for="PostalCode<%=Id%>">Zip</label><br />
+        <input id="PostalCode<%=Id%>" value="<%=PostalCode%>"/><br />
+        <br />    
+</script>
+
+
+@**********************  The customerAbout tab*************************@ 
+<script type="text/template" id="customerAbout">
+    About a customer not implemented
+</script>

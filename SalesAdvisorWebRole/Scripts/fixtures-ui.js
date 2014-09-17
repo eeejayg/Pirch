@@ -1,0 +1,1 @@
+alert('fixtures-ui');

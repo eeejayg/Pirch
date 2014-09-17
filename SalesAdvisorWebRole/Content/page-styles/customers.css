@@ -1,0 +1,876 @@
+/* 
+ * This is intended to be deliverable styles to allow extension of these styles.
+ * They are not intended to be perfect, but a starting point for future applications
+ * to keep a consistennt theme
+ *  */
+/* Global Colors */
+/* Font Sizes */
+/* Font Families */
+/* Standard Sizes */
+/* Media Queries */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  font-size: 20px;
+  /* Set our base font.  Everything besides this should be responsive */
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+body {
+  background-color: white; }
+
+.largeTitleText {
+  font-size: 2.8rem;
+  font-family: "proxima_novalight"; }
+
+.smallTitleText {
+  font-size: 1.8rem;
+  font-family: "proxima_novalight"; }
+
+.xLargeText {
+  font-size: 1.8rem;
+  font-family: "proxima_novalight"; }
+
+.xLargeTextGrey {
+  font-size: 1.8rem;
+  font-family: "proxima_novalight";
+  color: #e5e5e5; }
+
+.largeText {
+  font-size: 1.2rem;
+  font-family: "proxima_novalight"; }
+
+.largeTextGrey {
+  font-size: 1.2rem;
+  font-family: "proxima_novalight";
+  color: #e5e5e5; }
+
+.smallText {
+  font-size: 1rem;
+  font-family: "proxima_novalight"; }
+
+.miniText {
+  font-size: 0.9rem;
+  font-family: "proxima_nova_rgregular"; }
+
+.footnoteText {
+  font-size: 0.8rem;
+  font-family: "proxima_nova_rgregular"; }
+
+.bubbleText {
+  font-size: 1.2rem;
+  font-family: "proxima_novasemibold"; }
+
+a, a:visited, a:hover, a:link, a:active {
+  text-decoration: none;
+  color: #595959; }
+
+li {
+  list-style: none; }
+
+input[type=text], textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid #f2f2f2;
+  padding: 0.7rem; }
+  input[type=text]:focus, textarea:focus {
+    border: 1px solid #00e1bb;
+    outline: none; }
+
+.hidden {
+  display: none !important; }
+
+div.loading_word {
+  text-align: center;
+  vertical-align: center;
+  height: 4rem; }
+  div.loading_word div {
+    margin-top: 1rem; }
+    div.loading_word div span {
+      font-size: 2rem;
+      color: #00e1bb;
+      -webkit-animation-name: loading;
+      -moz-animation-name: loading;
+      -ms-animation-name: loading;
+      -o-animation-name: loading;
+      animation-name: loading;
+      -webkit-animation-duration: 3.3333s;
+      -moz-animation-duration: 3.3333s;
+      -ms-animation-duration: 3.3333s;
+      -o-animation-duration: 3.3333s;
+      animation-duration: 3.3333s;
+      -webkit-animation-iteration-count: infinite;
+      -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+      -o-animation-iteration-count: infinite;
+      animation-iteration-count: infinite; }
+      div.loading_word div span:nth-child(1) {
+        -webkit-animation-delay: 0.33333s;
+        -moz-animation-delay: 0.33333s;
+        -ms-animation-delay: 0.33333s;
+        -o-animation-delay: 0.33333s;
+        animation-delay: 0.33333s; }
+      div.loading_word div span:nth-child(2) {
+        -webkit-animation-delay: 0.66667s;
+        -moz-animation-delay: 0.66667s;
+        -ms-animation-delay: 0.66667s;
+        -o-animation-delay: 0.66667s;
+        animation-delay: 0.66667s; }
+      div.loading_word div span:nth-child(3) {
+        -webkit-animation-delay: 1s;
+        -moz-animation-delay: 1s;
+        -ms-animation-delay: 1s;
+        -o-animation-delay: 1s;
+        animation-delay: 1s; }
+      div.loading_word div span:nth-child(4) {
+        -webkit-animation-delay: 1.33333s;
+        -moz-animation-delay: 1.33333s;
+        -ms-animation-delay: 1.33333s;
+        -o-animation-delay: 1.33333s;
+        animation-delay: 1.33333s; }
+      div.loading_word div span:nth-child(5) {
+        -webkit-animation-delay: 1.66667s;
+        -moz-animation-delay: 1.66667s;
+        -ms-animation-delay: 1.66667s;
+        -o-animation-delay: 1.66667s;
+        animation-delay: 1.66667s; }
+      div.loading_word div span:nth-child(6) {
+        -webkit-animation-delay: 2s;
+        -moz-animation-delay: 2s;
+        -ms-animation-delay: 2s;
+        -o-animation-delay: 2s;
+        animation-delay: 2s; }
+      div.loading_word div span:nth-child(7) {
+        -webkit-animation-delay: 2.33333s;
+        -moz-animation-delay: 2.33333s;
+        -ms-animation-delay: 2.33333s;
+        -o-animation-delay: 2.33333s;
+        animation-delay: 2.33333s; }
+      div.loading_word div span:nth-child(8) {
+        -webkit-animation-delay: 2.66667s;
+        -moz-animation-delay: 2.66667s;
+        -ms-animation-delay: 2.66667s;
+        -o-animation-delay: 2.66667s;
+        animation-delay: 2.66667s; }
+      div.loading_word div span:nth-child(9) {
+        -webkit-animation-delay: 3s;
+        -moz-animation-delay: 3s;
+        -ms-animation-delay: 3s;
+        -o-animation-delay: 3s;
+        animation-delay: 3s; }
+      div.loading_word div span:nth-child(10) {
+        -webkit-animation-delay: 3.33333s;
+        -moz-animation-delay: 3.33333s;
+        -ms-animation-delay: 3.33333s;
+        -o-animation-delay: 3.33333s;
+        animation-delay: 3.33333s; }
+
+@-webkit-keyframes loading {
+  from {
+    color: #00e1bb; }
+
+  1% {
+    color: black; }
+
+  10% {
+    color: black; }
+
+  10.001% {
+    color: #00e1bb; }
+
+  to {
+    color: #00e1bb; } }
+
+@-moz-keyframes loading {
+  from {
+    color: #00e1bb; }
+
+  1% {
+    color: black; }
+
+  10% {
+    color: black; }
+
+  10.001% {
+    color: #00e1bb; }
+
+  to {
+    color: #00e1bb; } }
+
+@-ms-keyframes loading {
+  from {
+    color: #00e1bb; }
+
+  1% {
+    color: black; }
+
+  10% {
+    color: black; }
+
+  10.001% {
+    color: #00e1bb; }
+
+  to {
+    color: #00e1bb; } }
+
+@keyframes loading {
+  from {
+    color: #00e1bb; }
+
+  1% {
+    color: black; }
+
+  10% {
+    color: black; }
+
+  10.001% {
+    color: #00e1bb; }
+
+  to {
+    color: #00e1bb; } }
+
+.circle {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%; }
+
+.cancelBox {
+  text-align: right; }
+  .cancelBox .basicCancel {
+    font-size: 4rem;
+    padding: 3rem; }
+
+.pirchCBoxContent {
+  padding: 1rem; }
+
+/*
+ * Reusable component styles
+ */
+.paddingBottom22 {
+  padding-bottom: 22px; }
+
+.paddingBottom12 {
+  padding-bottom: 12px; }
+
+.colorBlack {
+  color: black; }
+
+.colorGrey {
+  color: #a5a5a5; }
+
+.tabBar {
+  position: relative;
+  height: 84px;
+  margin-bottom: 48px; }
+  .tabBar .tab {
+    background-color: black;
+    color: #666666;
+    position: absolute;
+    text-align: center;
+    line-height: 84px;
+    top: 0%;
+    height: 100%;
+    border-right: 1px solid #666666; }
+  .tabBar .tab.selected {
+    background-color: #00e1bb;
+    color: white; }
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  padding: 1.2em 2rem;
+  background-color: #00e1bb;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 0px;
+  cursor: pointer; }
+
+.button {
+  cursor: pointer; }
+
+.logo-l {
+  display: block;
+  padding-top: 3rem;
+  padding-bottom: 4em; }
+
+.titleBar {
+  width: 100%;
+  border-top: 0px;
+  font-size: 1.0rem;
+  color: white;
+  text-transform: uppercase;
+  background-color: black;
+  text-align: center;
+  height: 84px; }
+  .titleBar h1 {
+    display: inline;
+    font-family: "proxima_nova_rgbold";
+    font-size: 24px; }
+  .titleBar a {
+    font-size: 84px;
+    float: right;
+    padding: 0 2rem; }
+    .titleBar a:first-child {
+      float: left; }
+  .titleBar.backOnly a {
+    position: absolute;
+    left: 0px; }
+  .titleBar a, .titleBar a:visited, .titleBar a:hover, .titleBar a:link, .titleBar a:active {
+    color: white; }
+  .titleBar h1 {
+    line-height: 84px; }
+  .titleBar a, .titleBar h1 {
+    position: relative; }
+
+.titleBarGreen {
+  border-top: 0px;
+  font-size: 1.0rem;
+  color: white;
+  background-color: #00e1bb;
+  text-align: center;
+  height: 84px; }
+  .titleBarGreen h1 {
+    text-transform: uppercase;
+    font-family: "proxima_nova_rgbold";
+    font-size: 24px; }
+
+.searchBarContainer {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 108px;
+  top: 84px;
+  -webkit-box-shadow: 0px 3px 0.25rem rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 3px 0.25rem rgba(0, 0, 0, 0.25);
+  -ms-box-shadow: 0px 3px 0.25rem rgba(0, 0, 0, 0.25);
+  -o-box-shadow: 0px 3px 0.25rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 3px 0.25rem rgba(0, 0, 0, 0.25);
+  z-index: 1; }
+  .searchBarContainer .storeMapIcon {
+    position: absolute;
+    right: 44px;
+    top: 30px; }
+
+.fullBodyContainer {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background-color: #FFFFFF; }
+
+header.light-tab-header {
+  position: relative;
+  background-color: white;
+  height: 84px;
+  margin-bottom: 48px;
+  -webkit-box-shadow: 0px 3px 0.25rem #aaaaaa;
+  -moz-box-shadow: 0px 3px 0.25rem #aaaaaa;
+  -ms-box-shadow: 0px 3px 0.25rem #aaaaaa;
+  -o-box-shadow: 0px 3px 0.25rem #aaaaaa;
+  box-shadow: 0px 3px 0.25rem #aaaaaa; }
+  header.light-tab-header a {
+    width: 200px;
+    color: #a5a5a5;
+    height: 100%;
+    line-height: 84px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center; }
+  header.light-tab-header a.two-tab-right {
+    float: left; }
+  header.light-tab-header a.two-tab-left {
+    float: right; }
+  header.light-tab-header div.two-tab-right, header.light-tab-header div.two-tab-left {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 50%;
+    height: 100%; }
+  header.light-tab-header div.two-tab-left {
+    left: 0%; }
+  header.light-tab-header .selected {
+    color: #000; }
+
+.tabContentContainer {
+  min-height: 30px;
+  margin-bottom: 40px; }
+
+.clear {
+  clear: left; }
+
+.floatRight {
+  float: right; }
+
+.floatLeft {
+  float: left; }
+
+.floatH {
+  position: relative;
+  display: block;
+  float: left;
+  clear: none; }
+
+.floatV {
+  position: relative;
+  display: block;
+  float: left;
+  clear: left; }
+
+.gridContainer {
+  width: 100%;
+  position: absolute; }
+
+.popupColor {
+  background-color: #00e1bb; }
+
+.search-mag-icon {
+  position: relative;
+  display: block;
+  float: left;
+  clear: none;
+  background-image: url("/Images/UI/search-mag-icon.png");
+  width: 26px;
+  height: 26px; }
+
+/*---------------------------------------------- Buttons, Dots and Useful Clickables ------------------------------------------------------------------ */
+a.greenBlockButton {
+  display: block;
+  text-align: center;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  background-color: #00e1bb;
+  color: white; }
+
+a.greyBlockButton {
+  display: block;
+  text-align: center;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  background-color: #f2f2f2;
+  color: #00e1bb; }
+
+a.mediumGreyDot {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  color: white;
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  text-align: center;
+  line-height: .7rem;
+  font-size: 2rem; }
+  a.mediumGreyDot:visited, a.mediumGreyDot:hover, a.mediumGreyDot:link, a.mediumGreyDot:active {
+    color: white; }
+
+a.cancel {
+  background-color: #00cdac;
+  padding: .7rem 1rem; }
+  a.cancel:visited, a.cancel:hover, a.cancel:link, a.cancel:active {
+    color: white; }
+
+a.done {
+  background-color: black;
+  padding: .7rem 1rem; }
+  a.done:visited, a.done:hover, a.done:link, a.done:active {
+    color: white; }
+
+section#customerList #selectAgent {
+  height: 6rem;
+  border-bottom: 1px solid #f2f2f2;
+  position: relative;
+  -webkit-box-shadow: 0px 0px 0.25rem black;
+  -moz-box-shadow: 0px 0px 0.25rem black;
+  -ms-box-shadow: 0px 0px 0.25rem black;
+  -o-box-shadow: 0px 0px 0.25rem black;
+  box-shadow: 0px 0px 0.25rem black; }
+  section#customerList #selectAgent div {
+    margin: auto;
+    float: left;
+    position: absolute;
+    left: calc(50% - 2rem);
+    top: 25%; }
+    section#customerList #selectAgent div img {
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      border-radius: 50%;
+      height: 3rem;
+      width: 3rem; }
+    section#customerList #selectAgent div a {
+      position: relative;
+      top: -1rem; }
+section#customerList .customer_list div.letter span {
+  padding-left: 2em;
+  font-weight: bold; }
+section#customerList .customer_list a, section#customerList .customer_list div.letter, section#customerList .customer_list div.customerSearch {
+  display: block;
+  clear: both;
+  width: 100%;
+  border-bottom: 1px solid #f2f2f2;
+  overflow: hidden; }
+  section#customerList .customer_list a input, section#customerList .customer_list div.letter input, section#customerList .customer_list div.customerSearch input {
+    width: 100%;
+    height: 5rem;
+    padding: 1rem;
+    margin-left: 5.5rem;
+    font-size: 2rem;
+    border: none;
+    position: relative;
+    top: .25rem; }
+section#customerList .customer_list a div:first-child {
+  width: 50%; }
+  section#customerList .customer_list a div:first-child span {
+    padding-left: 2em; }
+section#customerList .customer_list a div:nth-child(2), section#customerList .customer_list a div:nth-child(3) {
+  width: 25%; }
+section#customerList .customer_list div {
+  height: 6rem;
+  font-size: 1.2rem;
+  float: left; }
+  section#customerList .customer_list div span {
+    position: relative;
+    top: 2.5rem; }
+
+/*temporary styles to remove customer search bar.*/
+section#customerSearch * {
+  display: none; }
+
+section#formData {
+  padding: 4rem; }
+  section#formData input {
+    font-size: 2rem;
+    padding: 1rem;
+    margin: 1rem 0; }
+  section#formData input#firstName {
+    margin-right: 1rem; }
+  section#formData input#firstName, section#formData input#lastName {
+    width: calc(50% - .5rem - 4px); }
+  section#formData input#email, section#formData input#phone {
+    width: 100%; }
+  section#formData input[type=checkbox] {
+    display: none; }
+  section#formData div#customerTypes {
+    overflow: hidden;
+    padding: .5rem; }
+  section#formData label {
+    padding: .5rem;
+    font-size: 1rem; }
+  section#formData label.selected {
+    background-color: black;
+    color: white;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    border-radius: 1rem; }
+
+.customerDetailCollection p {
+  padding-bottom: 24px; }
+
+.customerDetailCollectionProducts {
+  height: 112px;
+  background-color: #f2f2f2;
+  margin-bottom: 48px; }
+  .customerDetailCollectionProducts img, .customerDetailCollectionProducts .addMiscProductInstance {
+    width: 112px;
+    height: 112px;
+    float: left; }
+  .customerDetailCollectionProducts .addMiscProductInstance {
+    position: relative;
+    background-color: #666666;
+    background-size: 100%;
+    color: white;
+    font-size: 48px;
+    text-align: center;
+    line-height: 112px;
+    font-weight: bold; }
+  .customerDetailCollectionProducts .viewAll {
+    line-height: 112px;
+    padding: 0px 14px;
+    float: right; }
+
+.pagePadding {
+  padding: 0px 48px; }
+
+.customerProject .largeTitle {
+  padding-bottom: 48px; }
+
+.proposalContainer {
+  float: left;
+  width: 204px;
+  margin-right: 28px;
+  margin-bottom: 24px; }
+  .proposalContainer .proposalBox {
+    position: relative;
+    background-size: 100%;
+    padding-bottom: 14px;
+    width: 100%;
+    height: 136px; }
+
+.quoteContainer .quoteBox {
+  position: relative; }
+
+.quoteContainer .tempDelete, .proposalContainer .tempDelete {
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  width: 80px;
+  height: 30px;
+  background-color: black;
+  color: #f2f2f2;
+  margin: 10px;
+  line-height: 30px;
+  text-align: center; }
+
+.quoteContainer {
+  padding: 12px 48px;
+  border-top: 1px solid #f2f2f2;
+  width: 100%;
+  height: 96px; }
+
+.newQuote.row {
+  padding: 0px 48px 20px 160px; }
+
+#salesAssociateContainer div {
+  display: none; }
+#salesAssociateContainer div:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  clear: left;
+  display: block;
+  width: 100%;
+  -webkit-box-shadow: 0px 3px 0.25rem #aaaaaa;
+  -moz-box-shadow: 0px 3px 0.25rem #aaaaaa;
+  -ms-box-shadow: 0px 3px 0.25rem #aaaaaa;
+  -o-box-shadow: 0px 3px 0.25rem #aaaaaa;
+  box-shadow: 0px 3px 0.25rem #aaaaaa; }
+  #salesAssociateContainer div:first-child img {
+    position: relative;
+    display: block;
+    float: left;
+    clear: none;
+    width: 94px;
+    height: 94px;
+    margin-left: 40%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%; }
+  #salesAssociateContainer div:first-child p {
+    position: relative;
+    display: block;
+    float: left;
+    clear: none;
+    font-size: 1.2rem;
+    font-family: "proxima_novasemibold";
+    font-family: proxima_nova_rgbold;
+    font-size: 20px;
+    color: black;
+    margin-left: 20px;
+    margin-top: 58px; }
+
+#customerSearch .search-mag-icon {
+  margin-top: 27px;
+  margin-left: 20px; }
+
+#customerSearch.wideSearch input {
+  position: relative;
+  display: block;
+  float: left;
+  clear: none;
+  width: 80%;
+  border: 0px;
+  font-size: 1.2rem;
+  font-family: "proxima_novalight";
+  margin-top: 10px;
+  margin-left: 20px;
+  border: 1px solid white;
+  padding-left: 0px; }
+  #customerSearch.wideSearch input:focus {
+    border: 1px solid #00e1bb; }
+
+#customerListView li {
+  position: relative;
+  display: block;
+  float: left;
+  clear: left;
+  border-bottom: 1px solid #F2F2F2;
+  min-height: 63px;
+  width: 100%;
+  font-size: 1.2rem;
+  font-family: "proxima_novalight";
+  color: black; }
+  #customerListView li div:first-child {
+    position: relative;
+    display: block;
+    float: left;
+    clear: none;
+    width: 45%;
+    margin-top: 20px;
+    margin-left: 20px; }
+  #customerListView li div:nth-child(2) {
+    position: relative;
+    display: block;
+    float: left;
+    clear: none;
+    font-size: 1.2rem;
+    font-family: "proxima_novasemibold";
+    min-width: 20px;
+    min-height: 20px;
+    margin-top: 16px;
+    color: #00AA00; }
+  #customerListView li div:nth-child(3) {
+    position: relative;
+    display: block;
+    float: left;
+    clear: none;
+    float: right;
+    min-width: 20px;
+    min-height: 20px;
+    margin-top: 20px;
+    margin-right: 20px; }
+  #customerListView li span.dot.kitchen {
+    position: relative;
+    display: block;
+    float: left;
+    clear: none;
+    background-image: url("/Images/UI/dots/small-dot-kitchen.png");
+    width: 31px;
+    height: 30px;
+    line-height: 32px;
+    margin-right: 6px;
+    text-align: center;
+    color: white; }
+  #customerListView li span.dot.laundry {
+    position: relative;
+    display: block;
+    float: left;
+    clear: none;
+    background-image: url("/Images/UI/dots/small-dot-laundry.png");
+    width: 31px;
+    height: 30px;
+    line-height: 32px;
+    margin-right: 6px;
+    text-align: center;
+    color: white; }
+  #customerListView li span.dot.bathroom {
+    position: relative;
+    display: block;
+    float: left;
+    clear: none;
+    background-image: url("/Images/UI/dots/small-dot-bathroom.png");
+    width: 31px;
+    height: 30px;
+    line-height: 32px;
+    margin-right: 6px;
+    text-align: center;
+    color: white; }
+  #customerListView li span.dot.outdoor {
+    position: relative;
+    display: block;
+    float: left;
+    clear: none;
+    background-image: url("/Images/UI/dots/small-dot-outdoor.png");
+    width: 31px;
+    height: 30px;
+    line-height: 32px;
+    margin-right: 6px;
+    text-align: center;
+    color: white; }
+
+#customerListView ul li:first-child {
+  display: none; }
+
+div.customerProject div.tabBar {
+  margin-top: 130px; }
+
+section.quote section#quoteInformation {
+  padding: 1rem; }
+  section.quote section#quoteInformation section.pricingInformation {
+    float: right; }
+    section.quote section#quoteInformation section.pricingInformation input {
+      text-align: right;
+      width: 220px; }
+section.quote section#roomTabs {
+  background-color: black;
+  height: 84px;
+  margin-top: 84px; }
+section.quote.edit .viewOnly {
+  display: none; }
+section.quote.view .editOnly {
+  display: none; }
+section.quote section#quoteNavigation {
+  border-bottom: 2px solid #e5e5e5;
+  margin-top: 100px;
+  /** beta design hack **/ }
+section.quote section#productInstances ul li {
+  border-bottom: 1px solid #e5e5e5;
+  /* Do we have a global list view?*/
+  overflow: hidden;
+  padding: 1rem; }
+  section.quote section#productInstances ul li div {
+    float: left;
+    min-height: 2px;
+    /*Stops divs from collapsing in case of empty containers*/ }
+  section.quote section#productInstances ul li div:nth-child(1) {
+    width: 20%;
+    padding-left: 1%; }
+    section.quote section#productInstances ul li div:nth-child(1) img {
+      height: 80px; }
+  section.quote section#productInstances ul li div:nth-child(2) {
+    width: 50%; }
+  section.quote section#productInstances ul li div:nth-child(3) {
+    width: 30%;
+    text-align: right;
+    padding-right: 1rem;
+    text-align: right; }
+    section.quote section#productInstances ul li div:nth-child(3) input {
+      text-align: right;
+      width: 150px; }
+    section.quote section#productInstances ul li div:nth-child(3) .deleteProductInstance {
+      float: right;
+      bottom: 0.6rem;
+      left: 0.6rem;
+      position: relative; }
+
+.titleBarGreen div {
+  width: 13%; }
+.titleBarGreen div.menu {
+  float: right;
+  margin-top: -62px;
+  position: relative;
+  left: -13%; }
+.titleBarGreen h1, .titleBarGreen div {
+  display: inline-block; }
+.titleBarGreen h1 {
+  width: 70%;
+  line-height: 84px; }
+

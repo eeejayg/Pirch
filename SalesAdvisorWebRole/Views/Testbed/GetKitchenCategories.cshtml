@@ -1,0 +1,10 @@
+﻿@using SalesAdvisorSharedClasses.Models;
+@{
+    ViewBag.Title = "Kitchen categories";
+}
+@foreach(ProductCategory cat in ViewBag.cats) {
+    <div>
+        <img src="@ViewHelperMethods.CdnImageSrc(cat.Image)?width=200" />
+        <h3>@cat.Name</h3>
+    </div>
+}

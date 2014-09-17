@@ -1,0 +1,162 @@
+@import "../salesadvisor";
+
+.gridContainer.browseCategories {
+    top: $headerBarHeight + $searchBarHeight;
+}
+
+.gridContainer.browseProducts {
+    top: $headerBarHeight;
+}
+
+.productItemWithLegend {
+    width:100%;
+    height:100%;
+    img:first-child {
+        @include floatV;
+        width:100%;
+        height:256px;
+        left:0px;
+        top:0px;
+    }
+    .legendContainer {
+        @include floatV;
+        width:100%;
+        $legendleft: 15px;
+        margin-top:15px;
+        .brand {
+          @include smallText;
+          @include floatV;
+          @include ellipsis;
+          margin-left: $legendleft;
+          margin-top:0px;
+          height:auto;
+          width:auto;
+          max-width:190px;
+        }
+        .line {
+          @include smallText;
+          @include floatV;
+          @include ellipsis;
+          margin-left: $legendleft;
+          margin-top:5px;
+          width:auto;
+          max-width:210px;
+          height:auto;
+        }
+        .price {
+            @include floatV;
+            @include footnoteText;
+            color: $grey;
+            width:auto;
+            height:auto;
+            margin-top:7px;
+            margin-left: $legendleft;
+        }
+        .pin {
+            position:absolute;
+            display:block;
+            width:36px;
+            height:36px;
+            right:12px;
+            top:-4px;
+            &.pinned {
+                background-image: url("/Images/UI/dots/pirch-dot-gray.png");
+            }
+            &.unpinned {
+                background-image: url("/Images/UI/dots/pirch-dot-green.png");
+            }
+        }
+    }
+}
+
+.categoryItem {
+    cursor:pointer;
+}
+
+.roomsViewContainer {
+    position:absolute;
+    display:block;
+    width:100%;
+    bottom:0px;
+    top: $headerBarHeight + $searchBarHeight;
+}
+
+$rooms: kitchen bathroom outdoor laundry;
+
+@mixin commonroom {
+    position:absolute;
+	display:block;
+    width:100%;
+    height:100%;
+}
+
+.roomItem {
+    width: 50%;
+    height: 50%;
+	background-color:#000000;
+	overflow:hidden;
+	@each $room in $rooms {
+	  .#{$room} {
+		@include commonroom;
+		background-image: url("/Images/#{$room}.jpg");
+	  }
+	}
+	.name {
+		display:block;
+		position:relative;
+		top:50%;
+		text-align: center;
+		font-family: $boldFont;
+		font-size: 24px;
+		color:#FFFFFF;
+		text-transform:uppercase;
+		a {
+		  color:$white;
+		}
+	}
+}
+
+.siteAreasList {
+    @include floatV;
+    width:300px;
+    height:300px;
+    float:center;
+    margin:auto;
+    margin-top:220px;
+    .storeName {
+        @include floatV;
+        @include largeText;
+        margin:auto;
+        width:auto;
+        max-width:200px;
+        text-align:center;
+        margin-bottom:26px;
+        float:center;
+        padding: 14px 24px 14px 24px;
+        border-bottom:1px solid #d3d4d5;
+    }
+    .logoContainer {
+        width:100%;
+        text-align:center;
+        @include floatV;
+        margin-bottom:38px;
+    }
+    .siteAreaItemContainer {
+        @include floatV;
+        width:100%;
+        text-align:center;
+        .siteAreaItem {
+            @include floatV;
+            @include largeText;
+            width:100%;
+            text-align:center;
+            margin-bottom:20px;
+        }
+    }
+    a {
+        color:$black;
+    }
+    a:hover {
+        color:$green;
+    }
+}

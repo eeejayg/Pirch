@@ -1,0 +1,67 @@
+@mixin vendorPrefix($property, $value) {
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-ms-#{$property}: $value;
+	-o-#{$property}: $value;
+	#{$property}: $value;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+@mixin mq($query) {
+	@media screen and ($query){ 
+		@content; 
+	}
+}
+@mixin allA {
+	a,a:visited,a:hover,a:link,a:active {
+		@content;
+	}  
+}
+@mixin allAStates {
+	&:visited,&:hover,&:link,&:active {
+		@content;
+	}  
+}
+
+@mixin ellipsis {  
+  text-overflow: ellipsis;  
+  white-space: nowrap;
+  overflow: hidden; 
+}  
+
+@mixin circle{
+	@include vendorPrefix("border-radius", 50%);
+}
+
+// for block floating, H = horizontal and V = vertical
+@mixin floatH {
+    position:relative;
+    display:block;
+    float:left;
+    clear:none;
+}
+@mixin floatHRight {
+    @include floatH;
+    float:right;
+}
+@mixin floatV {
+    position:relative;
+    display:block;
+    float: left;
+    clear:left;
+}
+

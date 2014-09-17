@@ -1,0 +1,15 @@
+﻿@using SalesAdvisorSharedClasses.Models;
+@{
+    ViewBag.Title = "Choose Store";
+}
+@section Styles {
+    @Styles.Render("~/login/css")   
+}
+<section id="chooseStore">
+    @Html.Partial("_Logo")
+    <ul id="storeCodes">
+        @foreach (StoreInfo store in ViewBag.storeCodes) {
+            <li><a href="SetStore?storeCode=@store.StoreCode">@store.StoreName</a></li>
+        }
+    </ul>
+</section>

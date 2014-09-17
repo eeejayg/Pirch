@@ -1,0 +1,58 @@
+﻿<script type="text/template" id="twoTabLight">
+    <header class="light-tab-header">
+        <div class="two-tab-left">
+            <a class="two-tab-left <%= options[0].selected ? 'selected' : '' %>" href="<%= options[0].href %>"><%= options[0].html %></a>
+        </div>
+        <div class="two-tab-right">
+            <a class="two-tab-right <%= options[1].selected ? 'selected' : '' %>" href="<%= options[1].href %>"><%= options[1].html %></a>
+        </div>
+    </header>
+</script>
+
+<script type="text/template" id="tabBar">
+    <div class="tabBar">
+        <% for (var i = 0; i < tabs.length; ++i) {
+             var tab = tabs[i];
+             var className = "tab tab"+i+(i == selectedTab ? " selected" : "") %>
+            <div class="<%= className %>" style="width: <%= tabWidth() %>%; left: <%= tabWidth() * i %>%">
+                <%= tab.label %>
+            </div>
+        <% } %>
+    </div>
+</script>
+
+<script type="text/template" id="searchBar">
+    <div class="searchBarContainer">
+        <a href="#<%= mapIconPath %>" class="storeMapIcon"><img src="Images/UI/storeMapIcon.png" /></a>
+    </div>
+</script>
+
+<script type="text/template" id="headerBar">
+@*    add a subClass for background color, eg*@
+    <header class="titleBar <%= subClass %>">
+        <a href="javascript:Backbone.history.history.back()"><img src="Images/UI/backArrow.png" /></a>
+        <h1><%= title %></h1>
+        <a href="#"><img src="Images/UI/headerPlus.png" /></a>
+    </header>
+</script>
+
+<script type="text/template" id="fullBodyLayout">
+    <section id="bodySection">
+    </section>
+</script>
+
+<script type="text/template" id="headerBodyLayout">
+    <section id="header">
+    </section>
+    <section id="body">
+    </section>
+</script>
+
+<script type="text/template" id="twoHeaderBodyLayout">
+    <section id="headerTop">
+    </section>
+    <section id="headerBottom">
+    </section>
+    <section id="body">
+    </section>
+</script>

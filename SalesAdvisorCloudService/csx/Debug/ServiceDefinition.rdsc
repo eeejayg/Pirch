@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceContract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" dslVersion="1.0.0.0" name="SalesAdvisorCloudServiceContract" xmlns="http://schemas.microsoft.com/dsltools/Contracts">
+  <elements>
+    <interface name="BackendWebRole:Endpoint1" url="http://*:8080" />
+    <interface name="BackendWebRole:Https" url="https://*:8081" />
+    <interface name="SalesAdvisorWebRole:HttpIn" url="http://*:80" />
+    <interface name="SalesAdvisorWebRole:HttpsIn" url="https://*:443" />
+    <interface name="SalesAdvisorWebRole:Microsoft.WindowsAzure.Plugins.RemoteForwarder.RdpInput" url="tcp://*:3389" />
+  </elements>
+</serviceContract>

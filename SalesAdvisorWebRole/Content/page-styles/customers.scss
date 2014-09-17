@@ -1,0 +1,401 @@
+@import "../salesadvisor";
+
+section#customerList {
+	#selectAgent{
+		height:6rem;
+		border-bottom:1px solid $lightGrey;
+		position:relative;
+		@include vendorPrefix("box-shadow", 0px 0px .25rem #000);
+		div{
+			margin:auto;
+			float:left;
+			position:absolute; 
+			left:calc(50% - 2rem);
+			top:25%;
+			
+			img{
+				@include vendorPrefix("border-radius", 50%);
+				height:3rem;
+				width: 3rem;
+			}
+			a{
+				position:relative;
+				top:-1rem;
+			}
+		}
+	}
+	.customer_list{
+		div.letter span{
+			padding-left:2em;
+			font-weight:bold;
+		}
+		a,div.letter, div.customerSearch{
+			display:block;
+			clear:both;
+			width:100%;
+			border-bottom: 1px solid $lightGrey;
+			overflow:hidden;
+			input{
+				width:100%;
+				height:5rem;
+				padding:1rem;
+				margin-left:5.5rem;	
+				font-size:2rem;
+				border:none;
+				position:relative;
+				top:.25rem;
+			}
+		}
+		a div{
+			&:first-child{
+				span{
+					padding-left:2em;
+				}
+				width: 50%;
+			}
+			&:nth-child(2),&:nth-child(3){
+				width:25%;
+			}
+		}
+		
+		div{
+			height:6rem;
+			font-size:$largeText;
+			float:left;
+			span{
+				position:relative;
+				top:2.5rem;
+			}
+		}
+	}
+}
+/*temporary styles to remove customer search bar.*/
+section#customerSearch{
+    *{
+        display:none;
+    }
+}
+section#formData{
+	padding:4rem;
+	input{
+		font-size: 2rem;
+		padding: 1rem;
+		margin: 1rem 0;
+	}
+	input#firstName{
+		margin-right:1rem;
+	}
+	input#firstName, input#lastName{
+		width: calc(50% - .5rem - 4px);
+	}
+	input#email, input#phone{
+		width: 100%;
+	}
+	input[type=checkbox]{
+		display:none;
+	}
+	div#customerTypes{
+		overflow:hidden;
+		padding:.5rem;
+	}
+	label{
+		padding:.5rem;
+		font-size: 1rem;
+	}
+	label.selected{
+		background-color: $black;
+		color:$white;
+		@include vendorPrefix("border-radius", 1rem);
+
+	}
+}
+
+.customerDetailCollection p {
+	padding-bottom: 24px;
+}
+
+.customerDetailCollectionProducts {
+	$height: 112px;
+
+	height: $height;
+	background-color: $lightGrey;
+	margin-bottom: 48px;
+	img, .addMiscProductInstance {
+		width: $height;
+		height: $height;
+		float: left;
+	}
+	.addMiscProductInstance {
+		position: relative;
+		background-color: $darkGrey;
+		background-size: 100%;
+		color: $white;
+		font-size: 48px;
+		text-align: center;
+		line-height: $height;
+		font-weight: bold;
+	}
+	.viewAll {
+		line-height: $height;
+		padding: 0px 14px;
+		float: right;
+	}
+}
+
+.pagePadding {
+	padding: 0px 48px;
+}
+
+.customerProject {
+	.largeTitle {
+		// This is temporary, should be removed to revert to the default once the project page is finished
+		padding-bottom: 48px;
+	}
+}
+
+.proposalContainer {
+	float: left;
+	width: 204px;
+	margin-right: 28px;
+	margin-bottom: 24px;
+	.proposalBox {
+		position: relative;
+		background-size: 100%;
+		padding-bottom: 14px;
+		width: 100%;
+		height: 136px;
+	}
+}
+
+.quoteContainer {
+	.quoteBox {
+		position: relative;
+	}
+}
+.quoteContainer, .proposalContainer {
+	.tempDelete {
+		border-radius: 5px;
+		position: absolute;
+		top: 20px;
+		left: 0px;
+		width: 80px;
+		height: 30px;
+		background-color: $black;
+		color: $lightGrey;
+		margin: 10px;
+		line-height: 30px;
+		text-align: center;
+	}
+}
+
+.quoteContainer {
+	$height: 96px;
+	padding: 12px 48px;
+	border-top: 1px solid $lightGrey;
+	width: 100%; 
+	height: $height;
+}
+
+.newQuote.row {
+	padding: 0px 48px 20px 160px;
+}
+
+#salesAssociateContainer {
+    div {
+        display:none;
+    }
+    div:first-child {
+        @include floatV;
+
+        display:block;
+        width:100%;
+        @include vendorPrefix("box-shadow", 0px 3px .25rem #aaa);
+        img {
+          @include floatH;
+          width:94px;
+          height:94px;
+          margin-left:40%;
+          margin-top:12px;
+          margin-bottom:12px;
+          @include vendorPrefix("border-radius", 50%);
+        }
+        p { 
+            @include floatH;
+            @include bubbleText;
+            font-family:proxima_nova_rgbold;
+            font-size:20px;
+            color:$black;
+            margin-left:20px;
+            margin-top:58px;
+        }
+    }
+}
+
+#customerSearch .search-mag-icon {
+    margin-top:27px;
+    margin-left:20px;
+}
+
+#customerSearch.wideSearch input {
+    @include floatH;
+	width: 80%;
+	border:0px;
+	font-size: $largeText;
+	font-family: $lightFont;
+    margin-top:10px;
+    margin-left:20px;
+    border:1px solid $white;
+    padding-left:0px;
+    &:focus {
+      border:1px solid $green;
+    }
+}
+
+#customerListView li {
+  @include floatV;
+  border-bottom:1px solid #F2F2F2;
+  min-height:63px;
+  width:100%;
+  @include largeText;
+  color:$black;
+  div:first-child {
+	 @include floatH;
+	 width:45%;
+	 margin-top:20px;
+     margin-left:20px;
+  }
+  div:nth-child(2) {
+    @include floatH;
+    @include bubbleText;
+    min-width:20px;
+    min-height:20px; 
+    margin-top:16px;
+    color:#00AA00;
+  }
+  div:nth-child(3) {
+    @include floatHRight;
+    min-width:20px;
+    min-height:20px; 
+    margin-top:20px;
+    margin-right:20px;
+  }
+
+  $rooms: kitchen laundry bathroom outdoor;
+
+  @each $room in $rooms {
+    span.dot.#{$room} {
+        @include floatH;
+        background-image: url("/Images/UI/dots/small-dot-#{$room}.png");
+        width:31px;
+        height:30px;
+        line-height:32px;
+        margin-right:6px;
+        text-align:center;
+        color:$white;
+    }
+  }
+
+}
+
+// hide the about container for beta 1
+#customerListView ul li:first-child {
+  display:none;
+}
+
+div.customerProject div.tabBar{
+    margin-top: 130px;
+}
+
+//=====================================================================================================
+//  Quotes positioning.  All styling should be global.
+//=====================================================================================================
+
+
+section.quote{
+    section#quoteInformation{
+        padding: 1rem;
+        section.pricingInformation {
+            float:right;
+            input{
+                text-align:right;
+                width: 220px;
+            }
+        }
+    }
+    section#roomTabs{
+        background-color: black;
+        height: 84px;
+        margin-top: 84px;
+    }
+    &.edit{
+        .viewOnly{
+            display:none;
+        }
+    }
+    &.view{
+        .editOnly{
+            display:none;
+        }
+    }
+    section#quoteNavigation{
+        border-bottom: 2px solid $mediumGrey;
+        margin-top: 100px; /** beta design hack **/
+    }
+    section#productInstances{
+        ul{
+            li{
+                border-bottom: 1px solid $mediumGrey; /* Do we have a global list view?*/
+                overflow:hidden;
+                padding:1rem;
+                div{
+                    float:left;
+                    min-height:2px; /*Stops divs from collapsing in case of empty containers*/
+                }
+                div:nth-child(1){
+                    width: 20%;
+                    padding-left:1%;
+                    img{
+                        height: 80px;
+                    }
+                }
+                div:nth-child(2){
+                    width:50%;
+                }
+                div:nth-child(3){
+                    width:30%;
+                    text-align:right;
+                    padding-right: 1rem;
+                    text-align:right;
+                    input{
+                        text-align:right;
+                        width: 150px;
+                    }
+                    .deleteProductInstance{
+                        float:right;
+                        bottom: 0.6rem;
+                        left: 0.6rem;
+                        position:relative;
+                    }
+                }
+            }
+        }
+    }
+}
+.titleBarGreen{
+    div{
+        width: 13%;
+    }
+    div.menu{
+        float: right;
+        margin-top: -62px;
+        position:relative;
+        left: -13%;
+    }
+    h1,div {
+        display: inline-block;
+    }
+	h1 {
+        width: 70%;
+		line-height: $headerBarHeight;
+	}
+}

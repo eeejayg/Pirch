@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.title = "Login";
+}
+
+@section Styles {
+    @Styles.Render("~/login/css")   
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/login")   
+    @Html.Partial("_LoginScreen")
+    @Html.Partial("_ChooseFace")
+}
+@Html.ActionLink("Change Store", "ChooseStore", "Login")
+<section id="login">
+    <section id="passwordScreen">
+
+        
+    </section>
+</section>

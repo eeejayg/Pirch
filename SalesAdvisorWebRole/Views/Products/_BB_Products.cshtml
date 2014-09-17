@@ -1,0 +1,52 @@
+﻿
+@*the overall page view for site areas, within which another collection view
+exists for listing out each vignette*@
+<script type="text/template" id="siteAreasList">
+    <div class="logoContainer"><img class="logo" src="Images/logo.png"/></div>
+    <div class="storeName"><%= storeName %></div>
+    <div class="siteAreaItemContainer"></div>
+</script>
+
+<script type="text/template" id="siteAreaItem">
+    <a href="#SiteAreas/<%= storePath %>/<%= SiteAreaId %>" class="siteAreaItem"><%= Name %></a>
+</script>
+
+<script type="text/template" id="productDetail">
+    <div class="fullBodyContainer">
+        <h1>Product detail view</h1>
+    </div>
+</script>
+
+<script type="text/template" id="categoryItem">
+    <div class="categoryItem floatH" style="width:100%;height:100%;">
+        <div class="floatH" style="width:100%;height:196px;">
+            <img class="floatH" style="float:center;width:256px;height:100%;margin:auto;" src="<%= image %>" />
+        </div>
+        <div class="floatV smallText" style="margin-top:2px;text-align:center;width:100%;height:auto;"><%= label %></div>
+    </div>
+</script>
+
+<script type="text/template" id="productItemWithLegend">
+    <div class="productItemWithLegend">
+        <a href="#">@ViewHelperMethods.Picturefill(ViewHelperMethods.CdnImageSrc("<%=image%>").ToString()+"?width=256&height=256&mode=crop")</a>
+            <div class="legendContainer">
+                <% if ($.cookie(pirch.constants.COOKIE_ACTIVE_CUSTOMER_ID)) { %>
+                    <a href="#" class="pin"></a>
+                <% } %>
+                <div class="brand"><%= Name %></div>
+                <div class="line"><%= Description %></div>
+                <div class="price">about $1200</div>
+            </div>
+    </div>
+</script>
+
+<script type="text/template" id="roomsViewContainer">
+</script>
+
+<script type="text/template" id="roomItem">
+    <a href="#<%= name %>">
+        <div class="<%= name%>"></div>
+    </a>
+    <div class="name"><a href="#<%= name %>"><%= name %></a></div>
+</script>
+

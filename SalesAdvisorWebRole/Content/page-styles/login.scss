@@ -1,0 +1,103 @@
+@import "../salesadvisor";
+
+section#faces {
+    overflow:hidden; 
+    padding: 0 3rem;
+    margin:auto; 
+    > div {
+	    float:left;
+	    width: 25%;
+	    @include mq($landscapeMQ){
+		    width:20%;
+	    }
+			
+	    text-align:center;
+	    height:20rem;
+
+	    a {
+		    display:block;
+		    border-radius: 50%;
+		    width:144px;
+		    height:144px;
+		    overflow:hidden;
+		    margin:auto;
+
+		    img {
+			    width: 100%;
+		    }
+	    }
+
+	    p {
+		    font-size: $largeText;
+		    margin-top: $footnoteText;
+	    }
+    }
+}
+section#login{
+    text-align:center;
+
+    .loginImgFrame {
+        display: inline-block;
+        overflow: hidden;
+        width: 216px;
+        height: 216px;
+
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+
+    p {
+	    font-size:$largeTitleText;
+    }
+
+    a {
+	    font-size:$smallTitleText;
+    }
+}
+
+section#faces p {
+    text-align:center;
+	&:nth-child(2) {
+	    font-size: $xLargeText;
+	}
+	&:nth-child(3) {
+	    font-size:$largeText;
+	    color:#595959;
+	}
+}
+
+section#login, section#chooseStore {
+    text-align:center;
+    ul#storeCodes{
+        a {
+            display:block;
+            padding: 1rem;
+            font-size: $largeText;
+        }
+    }
+}
+
+
+section#login p{
+    font-size:$largeTitleText;
+}
+section#login a{
+    font-size:$xLargeText;
+}
+
+input[type=password],button {
+    width:22rem;
+    _height:6rem;
+
+}
+button{
+    text-transform: uppercase;
+}
+input[type=password] {
+    border:1px solid #595959;
+    padding:1rem;
+    font-size:$xLargeText;
+    margin:1.5rem;
+}

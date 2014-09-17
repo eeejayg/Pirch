@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "CreateQuote";
+}
+
+@section Scripts{
+    
+<script type="text/javascript">
+    var Quote = Backbone.Model.extend({
+        urlRoot: '/json/quote',
+        idAttribute: "Id",
+        defaults: {
+            Id: null,
+            FKParentProject: 53,
+            Deadline: null,
+            Created: null,
+            Sunset: null,
+            FKProjectType: null,
+            FKStatus: null,
+            image: '',
+            __RequestVerificationToken: '',
+        }
+    });
+    var Proposal = Backbone.Model.extend({
+        urlRoot: '/json/proposal',
+        idAttribute: "Id",
+        defaults: {
+            Id: null,
+            FKParentProject: 53,
+            Deadline: null,
+            Created: null,
+            Sunset: null,
+            FKProjectType: null,
+            FKStatus: null,
+            image: '',
+            __RequestVerificationToken: '',
+        }
+    });
+
+
+    $(function () {
+
+//        var Cameron = pirch.model.customers({ Id: 50 });
+//        Cameron.fetch({
+//            success: function () {
+//                Cameron.save();
+//            }
+        //        });
+        var quote = new Quote();
+        $('button').on('click', function (e) {
+            e.preventDefault();
+            quote.save();
+        });
+    });
+</script>
+}
+
+
+<button>Create Address</button>
+
+<form method="POST" action="/json/customers">
+    <input type="text" value="false" name="builder" />
+    <button>go</button>
+</form>

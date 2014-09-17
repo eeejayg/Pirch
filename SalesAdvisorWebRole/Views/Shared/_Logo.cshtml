@@ -1,0 +1,7 @@
+﻿@using SalesAdvisorSharedClasses.Models;
+@{
+    ResponsiveImage FLLogo = new ResponsiveImage("/Images/Logo.png", "Fixtures Living Logo");
+    FLLogo.srcset.Add(new ResponsiveImageSrc("/Images/Logo.png", "min-device-pixel-ratio: 2.0"));
+    FLLogo.classname = "logo-l";
+}
+@ViewHelperMethods.Picturefill(FLLogo)

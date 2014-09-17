@@ -1,0 +1,5 @@
+C:\All\pirch\SalesAdvisorSharedClasses\bin\Debug\SalesAdvisorSharedClasses.dll
+C:\All\pirch\SalesAdvisorSharedClasses\bin\Debug\SalesAdvisorSharedClasses.pdb
+C:\All\pirch\SalesAdvisorSharedClasses\obj\Debug\SalesAdvisorSharedClasses.csprojResolveAssemblyReference.cache
+C:\All\pirch\SalesAdvisorSharedClasses\obj\Debug\SalesAdvisorSharedClasses.dll
+C:\All\pirch\SalesAdvisorSharedClasses\obj\Debug\SalesAdvisorSharedClasses.pdb

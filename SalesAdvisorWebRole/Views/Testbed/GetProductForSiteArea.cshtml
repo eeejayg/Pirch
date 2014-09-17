@@ -1,0 +1,26 @@
+﻿@using SalesAdvisorSharedClasses.Models;
+@{
+    ViewBag.Title = "Products for site area";
+    SiteArea siteArea = ViewBag.siteArea;
+    int i = 0;
+}
+@foreach (var product in siteArea.ProductTypes) {
+    i++;
+    <div>
+        @if (product.Images != null) {
+            if (product.Images.Count > 0) {
+                <img src="@ViewHelperMethods.CdnImageSrc(product.Images[0])?width=100" />
+            }
+        }
+        <p>@product.Name</p>
+        <p>@product.Description</p>
+        @if (product.Manufacturer != null) {
+            <p>@product.Manufacturer.Name</p>
+            if (product.Manufacturer.Lines != null) {
+                if (product.Manufacturer.Lines.Count > 0) {
+                    <p>@product.Manufacturer.Lines[0].Name</p>
+                }
+            }
+        }
+    </div>
+}

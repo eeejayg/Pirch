@@ -1,0 +1,40 @@
+@import "../salesadvisor";
+
+section#homePage {
+	overflow:hidden;
+    text-align: center;
+
+	section {
+		float:left;
+		width:100%;
+		@include mq($landscapeMQ) {
+				width:50%;
+		}
+	}
+	img {
+
+		&:nth-child(2) {
+            display: inline-block;
+			@include vendorPrefix("border-radius", 50%);
+		}
+		
+	}
+	form {
+		margin: 1rem;
+		font-size: 1.5rem;
+	}
+	ul {
+		width:100%;
+		border-bottom: 1px solid $mediumLightGrey;
+		li {
+			height:25%;
+			border-top: 1px solid $mediumLightGrey;
+			a {
+				display:block;
+				font-size: $xLargeText;
+				padding:2rem;
+			}
+		}
+	}
+
+}

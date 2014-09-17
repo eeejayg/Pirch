@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Projects";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles{
+    @Styles.Render("~/projects/css")   
+
+        
+}
+@section Scripts{
+    @Scripts.Render("~/bundles/projects")   
+
+    @Html.Partial("_BB_ProjectType")
+    @Html.Partial("_BB_ProjectRooms")
+    @Html.Partial("_BB_ProjectDate")
+}
+<div class="cancelBox">
+<input type="hidden" id="customerID" value="@ViewBag.custID" />
+<a href="/customers" class="basicCancel">x</a>
+</div>
+<section id="projects">
+
+</section>

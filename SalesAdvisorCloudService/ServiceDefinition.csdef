@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="SalesAdvisorCloudService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2013-03.2.0">
+  <WebRole name="SalesAdvisorWebRole" vmsize="Small">
+    <ConfigurationSettings>
+      <Setting name="SADBConnectionString" />
+      <Setting name="FLEndpointServer" />
+      <Setting name="MessageQueueConnectionString" />
+      <Setting name="Environment" />
+      <Setting name="CDNDomain" />
+    </ConfigurationSettings>
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="HttpIn" endpointName="HttpIn" />
+          <Binding name="Endpoint1" endpointName="HttpsIn" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <Certificates>
+      <Certificate name="ArtefactSelfSigned" storeLocation="LocalMachine" storeName="CA" />
+    </Certificates>
+    <Endpoints>
+      <InputEndpoint name="HttpIn" protocol="http" port="80" />
+      <InputEndpoint name="HttpsIn" protocol="https" port="443" certificate="ArtefactSelfSigned" />
+    </Endpoints>
+    <Imports>
+      <Import moduleName="Diagnostics" />
+      <Import moduleName="RemoteAccess" />
+      <Import moduleName="RemoteForwarder" />
+    </Imports>
+  </WebRole>
+  <WorkerRole name="SalesAdvisorWorkerRole" vmsize="Small">
+    <Imports>
+      <Import moduleName="Diagnostics" />
+      <Import moduleName="RemoteAccess" />
+    </Imports>
+    <ConfigurationSettings>
+      <Setting name="PrivateQueueConnectionString" />
+      <Setting name="PrivateQueueName" />
+      <Setting name="ProtectedQueueConnectionString" />
+      <Setting name="ProtectedQueueName" />
+      <Setting name="DevQueueConnectionString" />
+      <Setting name="DevQueueName" />
+      <Setting name="DevProtectedQueueConnectionString" />
+      <Setting name="DevProtectedQueueName" />
+      <Setting name="SADBConnectionString" />
+      <Setting name="ProductDBConnectionString" />
+      <Setting name="FLEndpointServer" />
+    </ConfigurationSettings>
+    <Endpoints>
+      <InternalEndpoint name="GetDataEndpoint" protocol="tcp" />
+    </Endpoints>
+  </WorkerRole>
+  <WebRole name="BackendWebRole" vmsize="Small">
+    <ConfigurationSettings>
+      <Setting name="ProtectedQueueConnectionString" />
+      <Setting name="ProtectedQueueName" />
+      <Setting name="DevProtectedQueueConnectionString" />
+      <Setting name="DevProtectedQueueName" />
+    </ConfigurationSettings>
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="Endpoint1" endpointName="Endpoint1" />
+          <Binding name="Endpoint2" endpointName="Https" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <Endpoints>
+      <InputEndpoint name="Endpoint1" protocol="http" port="8080" />
+      <InputEndpoint name="Https" protocol="https" port="8081" certificate="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" />
+    </Endpoints>
+    <Imports>
+      <Import moduleName="Diagnostics" />
+      <Import moduleName="RemoteAccess" />
+    </Imports>
+    <Certificates>
+    </Certificates>
+  </WebRole>
+</ServiceDefinition>

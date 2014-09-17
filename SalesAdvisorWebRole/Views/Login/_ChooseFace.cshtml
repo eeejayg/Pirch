@@ -1,0 +1,16 @@
+﻿<!-- TODO This will need to be modified when we add in stores -->
+<script type="text/template" id="chooseFace">
+    @Html.Partial("_Logo")
+    <section id="faces">
+        @foreach (var u in @ViewBag.users)
+        {
+           <div>
+                <a href="#loginScreen">
+                    <img data-id="@u.id" data-name="@u.firstName" src="@u.ImageString()" alt="@u.firstName" data-login="@u.userName"/>
+                </a>
+                <p>@u.firstName</p>
+                <p>@u.title</p>
+           </div>
+        }
+    </section>
+</script>   

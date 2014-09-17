@@ -1,0 +1,28 @@
+﻿@using SalesAdvisorSharedClasses.Models
+@{
+}
+
+<script type="text/template" id="BB_TMP_chooseRooms">
+    <h1>Which spaces are included?</h1>
+    <section id="chooseRooms">
+        @{
+            ResponsiveImage img;
+        }
+    @foreach (var rm in @ViewBag.rooms)
+    {
+        <div id="@rm.Name" class="room newProjectButton off">
+            <a href="#" class="increment" data-rooms-category-id="@rm.Id"></a>
+            @{
+                img = ViewBag.images[rm.Name];
+                img.classname = "circle";
+            }
+            @ViewHelperMethods.Picturefill(img)
+            <a href="#" class="decrement" data-rooms-category-id="@rm.Id"></a>
+            <p>@ViewHelperMethods.UCFirst(rm.Name)</p>
+        </div>
+    }
+        <div>
+            <a href="#chooseDate" id="submitRooms" class="hidden">Save</a>
+        </div>
+        </section>
+</script>

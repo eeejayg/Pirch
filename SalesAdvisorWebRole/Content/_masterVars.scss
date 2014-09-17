@@ -1,0 +1,35 @@
+
+/* Global Colors */
+$black: #000;
+$darkGrey: rgb(102,102,102);
+$grey: rgb(165,165,165);
+$mediumGrey: rgb(229,229,229);
+$mediumLightGrey: rgb(229,229,229);
+$lightGrey: rgb(242,242,242);
+$white: #fff;
+$darkGreen: rgb(0,205,172);
+$green: #00E1BB;
+$red: rgb(246,23,72);
+
+/* Font Sizes */
+$footnoteText: 0.8rem; // 16px
+$miniText: 0.9rem; // 18px
+$smallText: 1rem; // 20px
+$largeText: 1.2rem; // 24px
+$xLargeText: 1.8rem; // 36px
+$smallTitleText: 1.8rem; // 36px
+$largeTitleText: 2.8rem; // 56px
+$bubbleText: 1.2rem; // 24px
+
+/* Font Families */
+$lightFont: "proxima_novalight";
+$regularFont: "proxima_nova_rgregular";
+$semiboldFont: "proxima_novasemibold";
+$boldFont: "proxima_nova_rgbold";
+
+/* Standard Sizes */
+$headerBarHeight: 84px;
+$searchBarHeight: 108px;
+
+/* Media Queries */
+$landscapeMQ: "min-width: 800px";
